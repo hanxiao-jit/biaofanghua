@@ -1,0 +1,62 @@
+my-shop-h5
+├── public/                  # 公共静态资源
+│   ├── favicon.ico          # 网站图标
+│   ├── logo.png             # LOGO 图片
+├── src/                     # 源码目录
+│   ├── api/                 # API 请求封装
+│   │   ├── index.js         # API 统一导出
+│   │   ├── user.js          # 用户相关 API
+│   │   ├── product.js       # 商品相关 API
+│   │   ├── order.js         # 订单相关 API
+│   │   ├── affiliate.js     # 分销相关 API
+│   │   ├── export.js        # 数据导出 API（用户信息 & 购买情况）
+│   ├── assets/              # 静态资源（图片、样式）
+│   │   ├── images/          # 图片
+│   │   ├── styles/          # 全局样式
+│   │   │   ├── base.css     # 基础样式
+│   │   │   ├── theme.css    # 主题样式
+│   ├── components/          # 复用组件
+│   │   ├── Header.vue       # 头部导航
+│   │   ├── Footer.vue       # 底部导航
+│   │   ├── ProductCard.vue  # 商品卡片
+│   │   ├── Empty.vue        # 空状态提示
+│   │   ├── ReferralLink.vue # 分销推广链接组件
+│   │   ├── ShareButton.vue  # 商品分享按钮组件（支持带用户ID的推广链接）
+│   │   ├── ExportButton.vue # 导出个人信息和购买情况的按钮组件
+│   ├── pages/               # 主要页面
+│   │   ├── Home.vue         # 首页
+│   │   ├── Product.vue      # 商品列表页
+│   │   ├── ProductDetail.vue# 商品详情页（支持生成带用户ID的推广链接）
+│   │   ├── Cart.vue         # 购物车页
+│   │   ├── Order.vue        # 订单页
+│   │   ├── User.vue         # 用户中心（支持导出个人信息和购买情况）
+│   │   ├── Login.vue        # 登录页面
+│   │   ├── Register.vue     # 注册页面
+│   │   ├── Affiliate.vue    # 分销中心
+│   ├── router/              # Vue Router 路由
+│   │   ├── index.js         # 路由配置
+│   ├── store/               # Pinia 状态管理
+│   │   ├── user.js          # 用户状态（存储用户ID）
+│   │   ├── cart.js          # 购物车状态
+│   │   ├── product.js       # 商品状态
+│   │   ├── affiliate.js     # 分销状态（管理推广链接）
+│   ├── utils/               # 工具方法
+│   │   ├── request.js       # Axios 封装
+│   │   ├── format.js        # 格式化方法
+│   │   ├── share.js         # 分享工具（生成带用户ID的推广链接）
+│   │   ├── export.js        # 导出工具（将数据转换为CSV或JSON格式）
+│   ├── App.vue              # 入口组件
+│   ├── main.js              # 入口文件
+├── .env                     # 环境变量配置
+├── .gitignore               # Git 忽略文件
+├── index.html               # HTML 入口文件
+├── package.json             # 依赖管理
+├── vite.config.js           # Vite 配置
+
+数据是存放在远程MySQL数据库中，不是本地。我们已经完成了从内存存储到数据库存储的转换。具体配置如下：
+数据库类型：MySQL
+数据库主机：47.100.101.95
+数据库端口：3306
+数据库用户名：root
+数据库名称：biaofanghua_user_h5
+
